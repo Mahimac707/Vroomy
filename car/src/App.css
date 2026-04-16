@@ -1,0 +1,118 @@
+
+/* NAVBAR MAIN */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(150deg, orange, orangered);
+  padding: 15px 40px;
+  position: relative;
+  z-index: 100;
+}
+
+/* LEFT */
+.left {
+  position: relative;
+}
+
+/* CENTER */
+.center {
+  display: flex;
+  gap: 30px;
+}
+
+/* RIGHT */
+.right h1 {
+  color: orangered;
+  margin: 0;
+  font-size: 3rem;
+  text-shadow: 0 0 20px #ffff;
+}
+
+/* LINKS */
+.navbar a {
+  text-decoration: none;
+  color: darkred;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+ color: #ffff;
+ transition: 0.3s;
+}
+
+/* PROFILE BUTTON */
+.left button {
+  background: transparent;   
+  border: none;             
+  outline: none;           
+  cursor: pointer;
+  padding: 0;
+  margin-left: 20px;
+}
+
+/* icon style */
+.left i {
+  font-size: 30px;
+  color: white;
+  transition: 0.3s;
+}
+
+.left i:hover {
+  transform: scale(1.1);
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  background: linear-gradient(130deg, orange, orangered);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 6px;
+  z-index: 101;
+}
+
+.dropdown a {
+  padding: 5px 10px;
+  color: darkred;
+}
+
+.dropdown a:hover {
+  color: #ffff;
+}
+
+/* LOGIN PAGE */
+.login-page {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/*Support*/
+.Support{
+  background: linear-gradient(125deg,darkred,orangered);
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.supportdiv{
+  margin: 20px 40px;
+  color: #ffff;
+  letter-spacing: 0.05em;
+}
+
+
+/*Footer*/
+footer {
+  text-align: center;
+  padding: 15px;
+  color: darkred;
+  background: linear-gradient(orange, orangered);
+  position: relative;
+  bottom: 0;
+}

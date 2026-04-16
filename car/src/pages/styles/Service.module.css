@@ -1,0 +1,282 @@
+.service {
+    font-family: sans-serif;
+
+  }
+  
+  /* ── Hero ── */
+  .hero {
+    position: relative;
+    background-image: url('../image/logo.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+  
+  .hero > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero h1 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.4rem;
+  }
+  
+  .subtitle {
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* ── Search ── */
+  .searchWrap {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 1rem;
+  }
+  
+  .searchWrap i {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #f97316;
+    font-size: 15px;
+  }
+  
+  .searchWrap input {
+    width: 100%;
+    padding: 14px 14px 14px 44px;
+    background: #fff;
+    border: 1.5px solid #f97316;
+    border-radius: 12px;
+    color: #333;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.2s;
+  }
+  
+  .searchWrap input:focus { border-color: #ea6c0a; }
+  .searchWrap input::placeholder { color: #bbb; }
+  
+  /* ── Suggestions ── */
+  .suggestions {
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    border: 1.5px solid #f97316;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+  
+  .suggItem {
+    padding: 11px 16px;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #ffe8d6;
+    transition: background 0.15s;
+  }
+  
+  .suggItem:last-child { border-bottom: none; }
+  .suggItem:hover { background: #fff4ec; color: #f97316; }
+  
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #f97316;
+    flex-shrink: 0;
+  }
+  
+  /* ── Chips ── */
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+  
+  .chip {
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.7);
+    color: #fff;
+    font-size: 12.5px;
+    padding: 6px 14px;
+    border-radius: 99px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  
+  .chip:hover {
+    background: #f97316;
+    border-color: #f97316;
+  }
+  
+  /* ── Form Section ── */
+  .formSection {
+    background: #fff;
+    padding: 4rem 2rem;
+  }
+  
+  .formInner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;  /* 👈 this is what puts them side by side */
+    gap: 2.5rem;
+    align-items: start;
+  }
+  
+  /* ── Form Card ── */
+  .formCard {
+    background: linear-gradient(120deg,orange,rgb(250, 238, 96));
+    border: 1.5px solid #f97316;
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  
+  .formCard h2 {
+    color: darkred;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* ── Form Fields ── */
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  
+  .field label {
+    font-size: 12.5px;
+    color: #f97316;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  
+  .field input,
+  .field textarea,
+  .field select {
+    background: #fff;
+    border: 1.5px solid #f97316;
+    border-radius: 10px;
+    color: #333;
+    font-size: 14px;
+    padding: 11px 14px;
+    outline: none;
+    transition: border 0.2s;
+    font-family: inherit;
+  }
+  
+  .field input:focus,
+  .field textarea:focus,
+  .field select:focus {
+    border-color: #ea6c0a;
+    background: #fff8f4;
+  }
+  
+  .field input::placeholder,
+  .field textarea::placeholder { color: #bbb; }
+  .field select option { background: #fff; color: #333; }
+  .field textarea { resize: vertical; min-height: 100px; }
+  
+  /* ── Submit Button ── */
+  .submitBtn {
+    width: 100%;
+    padding: 13px;
+    background: #f97316;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s;
+  }
+  
+  .submitBtn:hover { background: #ea6c0a; }
+  
+  /* ── Contact Panel ── */
+  .contact {
+    border-radius: 16px;
+    padding: 2.5rem 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  
+  .contact h2 {
+    color: #f97316;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contactItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .contactItem i {
+    color: #f97316;
+    font-size: 16px;
+    margin-top: 3px;
+    min-width: 18px;
+  }
+  
+  .contactItem p {
+    color: #f97316;
+    font-size: 14.5px;
+    line-height: 1.5;
+    margin: 0;
+  }
+  
+  /* ── Socials ── */
+  .socials {
+    display: flex;
+    gap: 14px;
+    margin-top: 0.5rem;
+  }
+  
+  .socials i {
+    font-size: 40px;
+    color: #f97316;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+  
+  .socials i:hover { opacity: 0.7; }
