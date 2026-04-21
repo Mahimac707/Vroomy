@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import Image from './image/log.jpg';
 import Image1 from './image/build.jpg';
@@ -10,7 +10,31 @@ import Image6 from './image/nav.jpg';
 import Styles from './styles/Home.module.css';
 import Support from '../components/Support';
 
+
+const videos = [
+  {src: "/videos/car7.mp4",title: "Exterior Walk-Around", desc: "Full 360° body design overview "},
+  {src: "/videos/car6.mp4",title: "Performance Test",desc: "0-100 km/h in4.3 seconds"},
+  {src: "/videos/car2.mp4",title: "Off-road Mode",desc: "Terrain response system demo"},
+];
+
 function Home() {
+
+  const [current, setCurrent] = useState(0);
+  const videoRefs = useRef([]);
+
+  useEffect(() => {
+    videoRefs.current.forEach((v,i) => {
+      if (!v) return;
+      if (i === current){
+        v.play().catch(() => {}); 
+      }else{
+        v.pause();
+        v.currentTime = 0;
+      }
+    });
+  },[current]);
+  const go = (n) => setCurrent((n + videos.length) % videos.length);
+
   return (
     <>
       <div className={Styles.first}>
@@ -26,7 +50,7 @@ function Home() {
       </div>
 
 
-      <div className={Styles.second}>
+  <div className={Styles.second}>
   <div className={Styles.sectionHeader}>
     <span className={Styles.tag}>Technology</span>
     <h2>Tech that empowers your every move</h2>
@@ -86,6 +110,7 @@ function Home() {
       document.getElementById('carousel').scrollBy({ left: 300, behavior: 'smooth' });
     }}>&#8594;</button>
   </div>
+  </div>
 
   <div className={Styles.third}>
     <div className={Styles.feature}>
@@ -118,7 +143,7 @@ function Home() {
           <div className={Styles.icon}>
           <i className="fa-solid fa-tv"></i>
         </div>
-        <div><p className={Styles.itemName}></p>Touchscreen Infotainment</div>
+        <div><p className={Styles.itemName}>Touchscreen Infotainment</p></div>
         </div>
 
         <div className={Styles.item}>
@@ -154,7 +179,76 @@ function Home() {
       <img src={Image}/> 
     </div>
   </div>
+  </div>
+
+  
+  <div className={Styles.videoSection} id="section-1" >
+   <div className={Styles.videoInner}> 
+  <p className={Styles.videoLabel}>DESIGNED TO MAKE MEMORIES</p>
+  <h2 className={Styles.videoTitle}>People are the destination</h2>
+
+  <div className={Styles.trackOuter}>
+    <div className={Styles.track} style={{ transform: `translateX(-${current * 100}%)` }}>
+      {videos.map((vid, i) => (
+        <div className={Styles.slide} key={i}>
+          <video
+            ref={el => videoRefs.current[i] = el}
+            src={vid.src}
+            muted
+            loop
+            playsInline
+          />
+          <div className={Styles.slideInfo}>
+            <h3>{vid.title}</h3>
+            <p>{vid.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div className={Styles.thumbRow}>
+    {videos.map((_, i) => (
+      <div key={i} className={`${Styles.thumb} ${i === current ? Styles.thumbActive : ""}`} onClick={() => go(i)} />
+    ))}
+  </div>
+
+  <div className={Styles.videoControls}>
+    <div className={Styles.dots}>
+      {videos.map((_, i) => (
+        <button key={i} className={`${Styles.dot} ${i === current ? Styles.dotActive : ""}`} onClick={() => go(i)} />
+      ))}
+    </div>
+    <div className={Styles.arrows}>
+      <button onClick={() => go(current - 1)}>←</button>
+      <button onClick={() => go(current + 1)}>→</button>
+    </div>
+  </div>
 </div>
+</div>
+
+<div className={Styles.fifth}>
+  <div className={Styles.shop}>
+    <h1>Shopping Tools</h1>
+    <div className={Styles.tools_grid}>
+    <div className={Styles.tool}>
+    <i className="fa-solid fa-screwdriver-wrench"></i>
+      <p>Build & Price</p>
+    </div>
+    <div className={Styles.tool}>
+    <i className="fa-brands fa-searchengin"></i>
+      <p>Search Inventory</p>
+    </div>
+    <div className={Styles.tool}>
+      <i className="fa-solid fa-money-bill-transfer"></i>
+      <p>Special Offer</p>
+    </div>
+    <div className={Styles.tool}>
+    <i className="fa-etch fa-solid fa-location-dot"></i>
+      <p>Find a Dealer</p>
+    </div>
+    </div>
+  </div>
 </div>
 
 <Support/>

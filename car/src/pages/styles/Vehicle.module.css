@@ -51,6 +51,12 @@ html {
     font-size: 0.95rem;
     text-decoration: underline;
     width: fit-content;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+  .viewLink:hover{
+    color: #333;
   }
   
   .exploreBtn {
@@ -172,7 +178,6 @@ html {
     margin: 0 16px 20px;
   }
   
-  /* ── Responsive ── */
   @media (max-width: 900px) {
     .cardFirst {
       flex-direction: column;
@@ -198,49 +203,6 @@ html {
       font-size: 1.8rem;
     }
   }
-
-  /* Floating cart button */
-.cartFloating {
-  position: absolute;
-  top: 60vh;
-  right: 35px;
-  z-index: 100;
-}
-
-.cartBadgeLink {
-  position: relative;
-  background: #7b1500;
-  color: #fff;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  box-shadow: 0 4px 16px rgba(123,21,0,0.35);
-  transition: transform 0.2s;
-  text-decoration: none;
-}
-
-.cartBadgeLink:hover { transform: scale(1.08); }
-
-.badge {
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  background: #ff8c00;
-  color: #7b1500;
-  font-size: 0.7rem;
-  font-weight: 800;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 
 .cardthird{
   padding: 5rem 2rem;

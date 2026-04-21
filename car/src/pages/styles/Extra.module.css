@@ -1,0 +1,551 @@
+/* ── Hero ── */
+.first {
+    background-image: url('../image/picc.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .heroContent {
+    padding: 2.5rem 3rem;
+    color: #fff;
+  }
+  
+  .first h3 {
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    color: #f0c040;
+    text-shadow: 0 0 10px rgba(0,0,0,0.6);
+    margin: 0 0 0.5rem;
+  }
+  
+  .first h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    margin: 0 0 0.75rem;
+  }
+  
+  .first p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin: 0 0 1.5rem;
+  }
+  
+  .btnGroup {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .btnPrimary, .btnSecondary {
+    padding: 0.7rem 1.8rem;
+    border-radius: 0 10px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .btnPrimary {
+    background: orange;
+    color: #111;
+    border: 2px solid orange;
+  }
+  
+  .btnPrimary:hover {
+    background: transparent;
+    color: orange;
+  }
+  
+  .btnSecondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+  }
+  
+  .btnSecondary:hover {
+    background: #fff;
+    color: #111;
+  }
+  
+  /* ── Second ── */
+  .second {
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+  
+  .sectionHeader {
+    margin: 0 auto 2.5rem;
+  }
+  
+  .tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: orange;
+    margin-bottom: 0.75rem;
+  }
+  
+  .second h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.2;
+  }
+  
+  /* ── Card Carousel ── */
+  .carouselWrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto;
+  }
+  
+  .cardGrid {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 1rem 0.25rem;
+    flex: 1;
+  }
+  
+  .cardGrid::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .card {
+    min-width: 260px;
+    max-width: 300px;
+    scroll-snap-align: start;
+    padding: 2rem 1.75rem;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px black;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    flex-shrink: 0;
+  }
+  
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px orange;
+  }
+  
+  .cardIcon {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cardIcon img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .card h5 {
+    color: orange;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+  }
+  
+  .card p {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: rgb(78, 78, 78);
+    margin: 0;
+  }
+  
+  .arrowBtn {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .arrowBtn:hover {
+    background: orange;
+    border-color: orange;
+  }
+  
+  /* ── Features ── */
+  .third {
+    padding: 5rem 2rem;
+  }
+  
+  .feature {
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(120deg, rgb(247, 195, 100), orange);
+    padding: 3rem 2.5rem;
+  }
+  
+  .key {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    margin-bottom: 0.75rem;
+  }
+  
+  .feature h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: darkred;
+    margin: 0 0 2.5rem 0;
+  }
+  
+  .list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  
+  .item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 1.25rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  
+  .item:hover {
+    background: rgba(249, 115, 22, 0.12);
+    border-color: rgba(249, 115, 22, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  .icon {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    color: orangered;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .itemName {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  /* ── Fourth / Trust ── */
+  .fourth {
+    padding: 5rem 2rem;
+  }
+  
+  .trust {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  
+  .trustFirst {
+    flex: 1;
+  }
+  
+  .trustFirst h1 {
+    color: orangered;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .trustFirst p {
+    color: orange;
+    font-size: 1.25rem;
+    line-height: 1.9;
+  }
+  
+  .trustSecond {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  
+  .trustSecond img {
+    width: 90%;
+    height: 400px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+  
+  /* ── Video Carousel ── */
+  .videoSection {
+    padding: 4rem 2rem;
+  }
+  
+  .videoLabel {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: orange;
+    margin-bottom: 0.5rem;
+  }
+  
+  .videoTitle {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0 0 2rem;
+  }
+  
+  .trackOuter {
+    overflow: hidden;
+    border-radius: 14px;
+    position: relative;
+    background: #000;
+  }
+  
+  .track {
+    display: flex;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .slide {
+    min-width: 100%;
+    position: relative;
+  }
+  
+  .slide video {
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .slideInfo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  }
+  
+  .slideInfo h3 {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem;
+  }
+  
+  .slideInfo p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  
+  .thumbRow {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  
+  .thumb {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: #ddd;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .thumbActive {
+    background: orange;
+  }
+  
+  .videoControls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  
+  .dots {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s, transform 0.2s;
+  }
+  
+  .dotActive {
+    background: orange;
+    transform: scale(1.3);
+  }
+  
+  .arrows {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .arrows button {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  
+  .arrows button:hover {
+    background: orange;
+    border-color: orange;
+    color: #fff;
+  }
+  
+  /* ── Responsive ── */
+  @media (max-width: 1024px) {
+    .list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    /* Hero */
+    .first {
+      height: 60vh;
+    }
+  
+    .heroContent {
+      padding: 1.5rem;
+    }
+  
+    .first h1 {
+      font-size: 2rem;
+    }
+  
+    .first p {
+      font-size: 0.95rem;
+    }
+  
+    /* Second */
+    .second {
+      padding: 3rem 1rem;
+    }
+  
+    .second h2 {
+      font-size: 1.4rem;
+    }
+  
+    /* Hide arrows on mobile - swipe works */
+    .arrowBtn {
+      display: none;
+    }
+  
+    .card {
+      min-width: 220px;
+    }
+  
+    /* Features */
+    .third {
+      padding: 2rem 1rem;
+    }
+  
+    .feature {
+      padding: 2rem 1.25rem;
+    }
+  
+    .key {
+      font-size: 1.3rem;
+    }
+  
+    .list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    /* Trust */
+    .fourth {
+      padding: 3rem 1rem;
+    }
+  
+    .trust {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  
+    .trustFirst h1 {
+      font-size: 1.5rem;
+    }
+  
+    .trustFirst p {
+      font-size: 1rem;
+    }
+  
+    .trustSecond img {
+      width: 100%;
+      height: 260px;
+    }
+  
+    /* Video */
+    .videoSection {
+      padding: 2rem 1rem;
+    }
+  
+    .videoTitle {
+      font-size: 1.4rem;
+    }
+  
+    .slide video {
+      max-height: 260px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .first h1 {
+      font-size: 1.6rem;
+    }
+  
+    .list {
+      grid-template-columns: 1fr;
+    }
+  
+    .btnGroup {
+      flex-direction: column;
+    }
+  
+    .btnPrimary, .btnSecondary {
+      width: 100%;
+      text-align: center;
+    }
+  }

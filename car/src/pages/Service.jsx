@@ -65,7 +65,7 @@ function Service() {
       </div>
 
       {/* Form + Contact side by side */}
-      <div className={Styles.formSection}>
+      <div className={Styles.formSection} id="section-1">
         <div className={Styles.formInner}>
 
           {/* Left — Form */}

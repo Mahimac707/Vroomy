@@ -14,8 +14,8 @@ function Navbar () {
         <div className="center">
         <Link to="/">Home</Link>
         <Link to="/vehicles">Vehicles</Link>
-        <Link to="/shop">Shop</Link>
         <Link to="/service">Support & Service</Link>
+        <Link to="/shop"><i className="fa-solid fa-cart-arrow-down"></i></Link>
         </div>
         <div
           className="left"

@@ -1,4 +1,10 @@
 
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 /* NAVBAR MAIN */
 .navbar {
   display: flex;
@@ -40,6 +46,7 @@
 .navbar a:hover {
  color: #ffff;
  transition: 0.3s;
+ transform: scale(1.1);
 }
 
 /* PROFILE BUTTON */
@@ -106,7 +113,13 @@
   letter-spacing: 0.05em;
 }
 
+.supportdiv h3{
+  cursor: pointer;
+}
 
+.supportdiv h3:hover{
+  text-decoration: underline;
+}
 /*Footer*/
 footer {
   text-align: center;

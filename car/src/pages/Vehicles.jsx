@@ -37,18 +37,13 @@ function Vehicles() {
     <>
       <div className={Styles.wrapper}>
 
-        <div className={Styles.cartFloating}>
-          <Link to="/shop" className={Styles.cartBadgeLink}>
-            <i className="fa-solid fa-cart-arrow-down"></i>
-            {totalItems > 0 && <span className={Styles.badge}>{totalItems}</span>}
-          </Link>
-        </div>
-
         <div className={Styles.cardFirst} id="section-1">
           <div className={Styles.explore}>
             <h1>Anything but Business as Usual</h1>
             <p>Learn how we can be a productive accelerator for your business.</p>
-            <Link to="/" className={Styles.viewLink}>View Details</Link>
+            <button className={Styles.viewLink} 
+            onClick={() => document.getElementById('section-3').scrollIntoView({ behavior: 'smooth'})}
+            >View Details</button>
             <button
               type="button"
               className={Styles.exploreBtn}
@@ -73,7 +68,7 @@ function Vehicles() {
                     title="Add to cart"
                     onClick={() => handleAddToCart(vehicle)}
                   ></i>
-                  <i className="fa-regular fa-heart"></i>
+                  <i className="fa-regular fa-heart" title="favourite"></i>
                 </div>
                 <img src={vehicle.img} alt={vehicle.name} />
                 <h4>{vehicle.name}</h4>
@@ -83,7 +78,7 @@ function Vehicles() {
           </div>
         </div>
 
-        <div className={Styles.cardthird}>
+        <div className={Styles.cardthird} id="section-3">
           <div className={Styles.describe}>
           <span className={Styles.tag}>PERFORMANCE & CAPABILITY</span>
           <h2>All-out power for every moment.</h2>
