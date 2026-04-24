@@ -107,6 +107,9 @@ function Service() {
           {/* Right — Contact */}
           <div className={Styles.contact}>
             <h2>Contact Us</h2>
+            <p>We are 24*7 available to help you out</p>
+            
+            <div className={Styles.item}>
             <div className={Styles.contactItem}>
               <i className="fa-solid fa-location-dot"></i>
               <p>Chakupat, Lalitpur, Nepal</p>
@@ -119,11 +122,22 @@ function Service() {
               <i className="fa-solid fa-phone"></i>
               <p>+977-98234567, 97654323</p>
             </div>
-            <div className={Styles.socials}>
+            <div className={Styles.contactItem}>
               <i className="fa-brands fa-facebook"></i>
+              <p>Facebook</p>
+              </div>
+              <div className={Styles.contactItem}>
               <i className="fa-brands fa-twitter"></i>
+              <p>Twitter</p>
+              </div>
+              <div className={Styles.contactItem}>
               <i className="fa-brands fa-github"></i>
+              <p>Github</p>
+              </div>
+              <div className={Styles.contactItem}>
               <i className="fa-brands fa-instagram"></i>
+              <p>Instagram</p>
+              </div>
             </div>
           </div>
 

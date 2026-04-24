@@ -4,13 +4,13 @@
   background-image: url('../image/picc.jpg');
   background-size: cover;
   background-position: center;
-  height: 70vh;
+  height: 80vh;
   display: flex;
   align-items: flex-end;
 }
 
 .heroContent {
-  padding: 2.5rem 3rem;
+  padding: 4.5rem 3rem;
   color: #fff;
 }
 

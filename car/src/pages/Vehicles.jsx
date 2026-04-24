@@ -1,10 +1,12 @@
-import React from 'react';
+import { useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../components/CartContext';
+import Photo from './image/o1.png';
+import Photo2 from './image/o3.png';
 import Image  from './image/no.png';
 import Image1 from './image/1.jpg';
-import Image2 from './image/2.jpg';
-import Image3 from './image/3.jpg';
+import Image2 from './image/2.png';
+import Image3 from './image/3.png';
 import Image4 from './image/4.jpg';
 import Image5 from './image/5.jpg';
 import Image6 from './image/6.jpg';
@@ -16,14 +18,22 @@ import Styles from './styles/Vehicle.module.css';
 import Support from '../components/Support';
 
 const vehicles = [
-  { name: '2026 Vroomy Super Duty',   price: '$30,350', rawPrice: 30350, img: Image1 },
-  { name: '2026 Vroomy V-150',        price: '$30,000', rawPrice: 30000, img: Image2 },
-  { name: '2026 Vroomy Ranger',       price: '$30,500', rawPrice: 30500, img: Image3 },
-  { name: '2026 Vroomy Escape',       price: '$40,350', rawPrice: 40350, img: Image4 },
-  { name: '2026 Vroomy Bronco Sport', price: '$30,950', rawPrice: 30950, img: Image5 },
-  { name: '2026 Vroomy MACH-E',       price: '$40,000', rawPrice: 40000, img: Image6 },
+  { name: '2026 Vroomy Super Duty',   price: '$30,350', rawPrice: 30350, color: "#666" , img: Image1 },
+  { name: '2026 Vroomy V-150',        price: '$30,000', rawPrice: 30000, color: "#1a1a1a", img: Image2 },
+  { name: '2026 Vroomy Ranger',       price: '$30,500', rawPrice: 30500, color: "#f0f0f0", img: Image3 },
+  { name: '2026 Vroomy Escape',       price: '$40,350', rawPrice: 40350, color: "#e63312", img: Image4 },
+  { name: '2026 Vroomy Bronco Sport', price: '$30,950', rawPrice: 30950, color: "#1a3a72", img: Image5 },
+  { name: '2026 Vroomy MACH-E',       price: '$40,000', rawPrice: 40000, color: "#e85500", img: Image6 },
 ];
 
+const videos = [
+  { src: "/videos/in5.mp4", title: "Navigation", desc: "Smart navigation that learns your routes and guides you there without the guesswork."},
+  { src: "/videos/in6.mp4", title: "Wheels", desc: "Performance wheels built to grip the road and turn heads at every angle."},
+  { src: "/videos/in2.mp4", title: "Clutch", desc: "Smooth, responsive clutch engagement that puts total power delivery in your hands."},
+  { src: "/videos/in3.mp4", title: "Seating", desc: "Contoured seats crafted for comfort on every drive, short or long."},
+  { src: "/videos/in4.mp4", title: "Panoramic Roof", desc: "A wide glass ceiling that floods the cabin with light and opens the sky above you."},
+  { src: "/videos/in1.mp4", title: "Steering", desc: "Precision-engineered steering that responds to every curve with effortless control."}
+];
 function Vehicles() {
   const { addToCart, totalItems } = useCart();
   const navigate = useNavigate();
@@ -32,6 +42,10 @@ function Vehicles() {
     addToCart(vehicle);
     navigate('/shop');
   };
+
+  const [ selected, setSelected ] = useState(0);
+  const videoRefs = useRef([]);
+
 
   return (
     <>
@@ -95,6 +109,44 @@ function Vehicles() {
           </div>
         </div>
 
+      </div>
+
+      <div className={Styles.picker}>
+        <h2>Vroomy Colours Option</h2>
+        <p>Vroomy is available in the following colours in Nepal 🚗.</p>
+        <div className={Styles.select}>
+        <img className={Styles.imgPick}
+        src={vehicles[selected].img}
+        alt={vehicles[selected].name}
+        />
+        <div className={Styles.btncolor}>
+          {vehicles.map((car,i) => (
+            <button key={i} className={`${Styles.color} ${i === selected ? Styles.active : ""}`} 
+            onClick={() => setSelected(i)} 
+            title={car.name}
+            style={{ backgroundColor: car.color }}
+            />
+          ))}
+        </div>
+        <p>{vehicles[selected].name}</p>
+        </div>
+      </div>
+
+      <div className={Styles.vidDes}>
+        <div className={Styles.vidCard}>
+          <h2>Car in action</h2>
+          <div className={Styles.vidGrid}>
+          {videos.map((vid,i) =>(
+          <div className={Styles.track} key={i}>
+            <video src={vid.src} autoPlay muted loop playsInline/>
+            <div className={Styles.info}>
+              <h3>{vid.title}</h3>
+              <p>{vid.desc}</p>
+            </div>
+          </div>
+           ))}
+        </div>
+      </div>
       </div>
 
       <Support/>

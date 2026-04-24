@@ -133,150 +133,204 @@
     border-color: #f97316;
   }
   
+ 
   /* ── Form Section ── */
-  .formSection {
-    background: #fff;
-    padding: 4rem 2rem;
-  }
-  
+.formSection {
+  background: #fff;
+  padding: 4rem 2rem;
+}
+
+.formInner {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem 3rem;
+  background-color: #f5d8a8;
+  border: 2px solid #f97316;
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* ── Form Card ── */
+.formCard {
+  background: linear-gradient(120deg, white, rgb(250, 238, 96));
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.formCard h2 {
+  color: darkred;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Form Fields ── */
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.field label {
+  font-size: 12.5px;
+  color: #f97316;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.field input,
+.field textarea,
+.field select {
+  background: #fff;
+  border: 1.5px solid #f97316;
+  border-radius: 10px;
+  color: #333;
+  font-size: 14px;
+  padding: 11px 14px;
+  outline: none;
+  transition: border 0.2s;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  border-color: #ea6c0a;
+  background: #fff8f4;
+}
+
+.field input::placeholder,
+.field textarea::placeholder { color: #bbb; }
+.field select option { background: #fff; color: #333; }
+.field textarea { resize: vertical; min-height: 100px; }
+
+/* ── Submit Button ── */
+.submitBtn {
+  width: 100%;
+  padding: 13px;
+  background: #f97316;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+
+.submitBtn:hover { background: #ea6c0a; }
+
+/* ── Contact Panel ── */
+.contact {
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact h2 {
+  color: darkred;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.contact > p {
+  color: #555;
+  font-size: 18px;
+  margin-bottom: 2rem;
+}
+
+/* ── Contact Items ── */
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.contactItem i {
+  color: darkred;
+  font-size: 18px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.contactItem p {
+  color: #1a1a1a;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+
+/* Tablet */
+@media (max-width: 900px) {
   .formInner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;  /* 👈 this is what puts them side by side */
-    gap: 2.5rem;
-    align-items: start;
-  }
-  
-  /* ── Form Card ── */
-  .formCard {
-    background: linear-gradient(120deg,orange,rgb(250, 238, 96));
-    border: 1.5px solid #f97316;
-    border-radius: 16px;
+    grid-template-columns: 1fr;
     padding: 2rem;
   }
-  
-  .formCard h2 {
-    color: darkred;
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-  }
-  
-  /* ── Form Fields ── */
-  .row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 16px;
-  }
-  
-  .field {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    margin-bottom: 16px;
-  }
-  
-  .field label {
-    font-size: 12.5px;
-    color: #f97316;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-  
-  .field input,
-  .field textarea,
-  .field select {
-    background: #fff;
-    border: 1.5px solid #f97316;
-    border-radius: 10px;
-    color: #333;
-    font-size: 14px;
-    padding: 11px 14px;
-    outline: none;
-    transition: border 0.2s;
-    font-family: inherit;
-  }
-  
-  .field input:focus,
-  .field textarea:focus,
-  .field select:focus {
-    border-color: #ea6c0a;
-    background: #fff8f4;
-  }
-  
-  .field input::placeholder,
-  .field textarea::placeholder { color: #bbb; }
-  .field select option { background: #fff; color: #333; }
-  .field textarea { resize: vertical; min-height: 100px; }
-  
-  /* ── Submit Button ── */
-  .submitBtn {
-    width: 100%;
-    padding: 13px;
-    background: #f97316;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 600;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 8px;
-    transition: background 0.2s;
-  }
-  
-  .submitBtn:hover { background: #ea6c0a; }
-  
-  /* ── Contact Panel ── */
+
   .contact {
-    border-radius: 16px;
-    padding: 2.5rem 6rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+    padding: 1.5rem;
+    border-top: 2px solid #f97316;
   }
-  
+
   .contact h2 {
-    color: #f97316;
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
   }
-  
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .formSection {
+    padding: 2rem 1rem;
+  }
+
+  .formInner {
+    padding: 1.25rem;
+    gap: 1.5rem;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .formCard {
+    padding: 1.25rem;
+  }
+
+  .formCard h2 {
+    font-size: 1.4rem;
+  }
+
+  .contact h2 {
+    font-size: 1.4rem;
+  }
+
   .contactItem {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
+    gap: 0.75rem;
   }
-  
-  .contactItem i {
-    color: #f97316;
-    font-size: 16px;
-    margin-top: 3px;
-    min-width: 18px;
-  }
-  
-  .contactItem p {
-    color: #f97316;
-    font-size: 14.5px;
-    line-height: 1.5;
-    margin: 0;
-  }
-  
-  /* ── Socials ── */
-  .socials {
-    display: flex;
-    gap: 14px;
-    margin-top: 0.5rem;
-  }
-  
-  .socials i {
-    font-size: 40px;
-    color: #f97316;
-    cursor: pointer;
-    transition: opacity 0.15s;
-  }
-  
-  .socials i:hover { opacity: 0.7; }
+}
