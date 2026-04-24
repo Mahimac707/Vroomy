@@ -2,7 +2,6 @@ import { useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../components/CartContext';
 import Photo from './image/o1.png';
-import Photo2 from './image/o3.png';
 import Image  from './image/no.png';
 import Image1 from './image/1.jpg';
 import Image2 from './image/2.png';
@@ -130,6 +129,16 @@ function Vehicles() {
         </div>
         <p>{vehicles[selected].name}</p>
         </div>
+      </div>
+
+      <div className={Styles.family}>
+        <div className={Styles.famDes}>
+        <h2>Feels like Family, for a change</h2>
+        <p>Drive home a sense of belonging with Vroomy.Join the Vroomy family today and experience the difference.</p>
+        <div className={Styles.famImage}>
+          <img src={Photo} />
+        </div>
+      </div>
       </div>
 
       <div className={Styles.vidDes}>
